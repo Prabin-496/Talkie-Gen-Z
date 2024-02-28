@@ -5,11 +5,13 @@ import Login from './login';
 
 function App() {
   const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
+  console.log("Current User" , user);
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+      
 
         {/* Show username if user is logged in */}
         <ul className='userNameShow'>{isAuthenticated && <p> Welcome {user.name}</p>}</ul>
@@ -23,6 +25,7 @@ function App() {
           <ul>
             <button className='LogInButton' onClick={() => loginWithRedirect()}>Log In</button>
           </ul>
+        
         )}
       </header>
       <div>
