@@ -5,6 +5,7 @@ import onLogo from './of.png';
 import offLogo from './on.png';
 import rotationLogo from './Rotation.png';
 import { useAuth0 } from '@auth0/auth0-react';
+import Slider from '../src/slider';
 
 const TalkButton = ({ isTalking, onMouseDown, onMouseUp, onTouchStart, onTouchEnd }) => (
   <button
@@ -80,52 +81,59 @@ function App() {
   }, [isAuthenticated]);
 
   return (
-    <div className="App" style={{ textAlign: 'center', marginTop: '50px' }}>
+    <div className="App" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', marginTop: '150px' }}>
       {showRotationLogo && (
         <img
           src={rotationLogo}
           className="rot"
           alt="Talkie Gen Z - Logo"
-          style={{ width: '500px', height: '500px' }}
+          style={{ width: '500px', height: '500px'}}
+          
         />
       )}
       
-      
-      
-      <h1>Talkie Gen Z</h1>
       {isAuthenticated && (
-        <div>
-          <div style={{ marginBottom: '20px' }}>
-            <Switch
-              onChange={handleStatusSwitchChange}
-              checked={StatusSwitch}
-              offColor="#d3d3d3"
-              onColor="#86d3ff"
-              uncheckedIcon={false}
-              checkedIcon={false}
-              height={30}
-              width={60}
-              handleDiameter={30}
-            />
-            <p>Status: {StatusSwitch ? 'Online' : 'Offline'}</p>
-          </div>
-          <TalkButton
-            isTalking={isTalking}
-            onMouseDown={handlePushToTalk}
-            onMouseUp={handleReleaseTalk}
-            onTouchStart={handlePushToTalk}
-            onTouchEnd={handleReleaseTalk}
-          />
-        </div>
+      <>
+    <div>
+      <div style={{ marginBottom: '20px' }}>
+        
+        
+      </div>
+      <TalkButton
+        isTalking={isTalking}
+        onMouseDown={handlePushToTalk}
+        onMouseUp={handleReleaseTalk}
+        onTouchStart={handlePushToTalk}
+        onTouchEnd={handleReleaseTalk}
+      />
+    </div>
+    <Slider />
+  </>
       )}
       <audio ref={audioRef} src={walkieTalkieSound} />
       {!isAuthenticated ? (
         <button className="LogInButton" onClick={() => loginWithRedirect()}>Login</button>
       ) : (
         <div>
+          
           <ul>
             <p>Welcome {user.name}</p>
           </ul>
+          <div  style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+          <Switch
+          onChange={handleStatusSwitchChange}
+          checked={StatusSwitch}
+          offColor="#d3d3d3"
+          onColor="#86d3ff"
+          uncheckedIcon={false}
+          checkedIcon={false}
+          height={30}
+          width={60}
+          handleDiameter={30}
+          
+        />
+        <p>Status: {StatusSwitch ? 'Online' : 'Offline'}</p>
+        </div>
           <button className="LogInButton" onClick={() => logout({ returnTo: window.location.origin })}>Logout</button>
         </div>
       )}
