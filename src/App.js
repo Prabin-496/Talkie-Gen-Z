@@ -6,6 +6,7 @@ import offLogo from './on.png';
 import rotationLogo from './Rotation.png';
 import { useAuth0 } from '@auth0/auth0-react';
 import Slider from '../src/slider';
+// import FeedbackForm from './FeedbackForm';
 
 const TalkButton = ({ isTalking, onMouseDown, onMouseUp, onTouchStart, onTouchEnd }) => (
   <button
@@ -108,6 +109,7 @@ function App() {
       />
     </div>
     <Slider />
+    {/* <FeedbackForm /> */}
   </>
       )}
       <audio ref={audioRef} src={walkieTalkieSound} />
