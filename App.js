@@ -1,21 +1,4 @@
 <<<<<<< HEAD
-import React from "react";
-
-import './App.css';
-import Home from '../src/home';
-
-function App() {
-  return (
-    <div className="App">
-      <Chatbot />
-      <Home />
-      
-    </div>
-  );
-}
-
-export default App; 
-=======
 import React, { useState, useEffect, createRef } from 'react';
 import Switch from 'react-switch';
 import walkieTalkieSound from './walkie_talkie_beep.mp3';
@@ -162,4 +145,21 @@ function App() {
 }
 
 export default App;
->>>>>>> 9a3ccf96297d78fb1458993a40f60365af762958
+=======
+import React from "react";
+
+import './App.css';
+import Home from '../src/home';
+
+function App() {
+  return (
+    <div className="App">
+      <Chatbot />
+      <Home />
+      
+    </div>
+  );
+}
+
+export default App; 
+>>>>>>> 2cf4f49 (AI)
