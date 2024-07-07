@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .App {
   text-align: center;
 }
@@ -54,7 +54,7 @@
   border-radius: 100px;
  
 }
-=======
+
 .App {
   text-align: center;
   min-height: 100vh;
@@ -128,7 +128,3 @@
   transform: scale(1.1);
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
->>>>>>> 2cf4f49 (AI)
