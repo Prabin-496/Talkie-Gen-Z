@@ -1,7 +1,9 @@
+
 import React from "react";
 
 import './App.css';
-import Home from '../src/home';
+import Home from './home.jsx';
+import Chatbot from './Chatbot.jsx';
 
 function App() {
   return (
@@ -14,4 +16,3 @@ function App() {
 }
 
 export default App; 
-

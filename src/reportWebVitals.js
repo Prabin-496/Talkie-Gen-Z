@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+// import { getCLS, getFCP, getLCP, getTTFB } from 'web-vitals';
 const reportWebVitals = onPerfEntry => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
     import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
@@ -9,5 +11,7 @@ const reportWebVitals = onPerfEntry => {
     });
   }
 };
+
+
 
 export default reportWebVitals;
